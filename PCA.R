@@ -1,0 +1,37 @@
+#Bern Romey, 04Feb15 ~ ESM567 Term Project
+#PCA
+
+#Data
+scorp<-read.csv("scorp_data.csv", header=T) 
+scrp <-na.omit(scorp)
+
+#Assumptions
+boxplot(scrp, main = "Not scaled")
+boxplot(scale(scrp), main="Scaled with Z-score")
+boxplot(scale(log(scrp+1),main+"log transformed"))
+
+#source cor.matrix function
+cor.matrix(scale(scrp))
+
+cov(scale(scrp)) #calculate correlatin matrix with the standardized data: 
+#Z-score from -1 to 1 (PCC)
+
+
+#PCA Analysis
+
+require(MASS) #loads the PCA package
+pca <- princomp(scale(scrp)) #creates a PC matrix using the correlation matrix
+biplot(pca, expand = 1.05,main = "Biplot", xlab = "Comp.1 (__%)", ylab = "Comp.2 (__%)")
+#Scale for sites(PC matrix-pca$scores) on top, scale for variables (vectors-loadings) along bottom
+summary(pca) #proportion of variance is eigenvalues for each PC
+
+plot(pca, main="Scree Plot") #Scree plot
+broken.stick(10) #After comparing, keep components with eigenvalues > broken stick from summary
+
+round(loadings(pca),2) #Check eigenvectors: length of vector is relative variance and how much it contributes to the PC
+#Principal component loading (pg 50).  The further from zero, the greater the contribution.
+round(loadings(pca)[,c(1:2)],2) #Loading for PC1 & 2 only
+
+round((pca$scores),2) #PC matrix showing site scores for all PCs. How far each is(SD) from the the grand centroid
+#This is the distribution of PC1 and PC2 site scores (top scale).  Each variable for each component. 
+#In this case due to broken stick, PC1 and PC2
