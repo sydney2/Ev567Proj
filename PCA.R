@@ -10,15 +10,13 @@ boxplot(scrp, main = "Not scaled")
 boxplot(scale(scrp), main="Scaled with Z-score")
 boxplot(scale(log(scrp+1),main+"log transformed"))
 
-#source cor.matrix function
-cor.matrix(scale(scrp))
+cor.matrix(scale(scrp))#source cor.matrix function
 
 cov(scale(scrp)) #calculate correlatin matrix with the standardized data: 
 #Z-score from -1 to 1 (PCC)
 
 
 #PCA Analysis
-
 require(MASS) #loads the PCA package
 pca <- princomp(scale(scrp)) #creates a PC matrix using the correlation matrix
 biplot(pca, expand = 1.05,main = "Biplot", xlab = "Comp.1 (__%)", ylab = "Comp.2 (__%)")
