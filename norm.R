@@ -1,3 +1,5 @@
+#Bern Romey; 04Feb15
+# Test normality on entire data frame
 
 dta <- read.csv("evenv.csv")
 env <- na.omit(dta)
