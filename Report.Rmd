@@ -8,13 +8,13 @@ output:
 bibliography: pca.bib
 ---
 
-```{r global_options, include=FALSE}
+```{r global_options, include=FALSE, eval=FALSE}
 library(knitr)
 opts_chunk$set(fig.width=6, fig.height=4, fig.path='Figs/',
                echo=FALSE, warning=FALSE, message=FALSE)
 ```
 
-```{r dta, echo=FALSE}
+```{r dta, echo=FALSE, eval=FALSE}
 dta <- read.csv("file.csv")
 env <- na.omit(dta) #remove missing data
 rm(dta)
