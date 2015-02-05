@@ -8,7 +8,6 @@
 - 3. *In R, select new project, then version control, then Git.  Here is where you will paste the link from the Github clone.*
 - 4. *Step three will automaticly copy all files into your new R directory on your PC.*
 - You are all set, now you can start changing your script.  When you have made some changes you feel good about, "commit" saves changes to your project file on your system.  You can now "Push" those changes to repository or "Pull" from repository changes that others have made to your forked repository. Select the "Watch" icon at top to recieve automatic updates on the project.
-
 - [x] Meet with group and select variables
 - [x] Setup github repository for version control
 - [ ] Check assumptions for PCA
