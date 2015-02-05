@@ -20,7 +20,7 @@
 - 2. Compute a PCA of the matrix **Y-hat** of fitted values (produces a vector of canonical eigenvalues adn a matrix **U** of canical eigenvectors.
 - 3.  Use matrix **U** to compute two types of ordination site scores
 - Analysis produces constrained and unconstrained site scores.
--
+_____
 - [ ] MANOVA
 - [ ] Report findings - Term paper
 - [ ] Presentation
