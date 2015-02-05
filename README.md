@@ -14,13 +14,11 @@
 - [ ] Check assumptions for PCA
 - [ ] Run PCA
 - [ ] Compare variances from biplot with cor.matrix, and corelatin matrix
-- [ ] RMA
+- [ ] **Redudancy Matrix Analysis (RMA)**
 - **Multiple linear regressio followed by a PCA of the table of fitted values**
 - 1. Resress each (centered) **Y**-variable on explanatory table **X** adn compute the fitted (y-hat) and residuals (y-res) vectors.  Assemble all y-hat vectors into a matrix **Y-hat** of fitted values.
 - 2. Compute a PCA of the matrix **Y-hat** of fitted values (produces a vector of canonical eigenvalues adn a matrix **U** of canical eigenvectors.
-- 3.  Use matrix **U** to compute two types of ordination site scores
-- Analysis produces constrained and unconstrained site scores.
-_____
+- 3.  Use matrix **U** to compute two types of ordination site scores (*Analysis produces constrained and unconstrained site scores*)
 - [ ] MANOVA
 - [ ] Report findings - Term paper
 - [ ] Presentation
