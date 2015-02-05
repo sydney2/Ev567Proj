@@ -7,7 +7,6 @@ dt <-na.omit(dta)
 am <- dt[c(6:24)]
 
 #Assumptions
-boxplot(am, main = "Not scaled")
 boxplot(scale(am), main="Scaled with Z-score")
 boxplot(scale(log(am+1)),main="log transformed")
 
