@@ -2,29 +2,30 @@
 #PCA
 
 #Data
-scorp<-read.csv("scorp_data.csv", header=T) 
-scrp <-na.omit(scorp)
+dta<-read.csv("ApochthoniusMorphLatLon04Feb15.csv", header=T) 
+dt <-na.omit(dta)
+am <- dt[c(6:24)]
 
 #Assumptions
-boxplot(scrp, main = "Not scaled")
-boxplot(scale(scrp), main="Scaled with Z-score")
-boxplot(scale(log(scrp+1),main+"log transformed"))
+boxplot(am, main = "Not scaled")
+boxplot(scale(am), main="Scaled with Z-score")
+boxplot(scale(log(am+1)),main="log transformed")
 
-cor.matrix(scale(scrp))#source cor.matrix function
+cor.matrix(scale(am))#source cor.matrix function
 
-cov(scale(scrp)) #calculate correlatin matrix with the standardized data: 
+cov(scale(am)) #calculate correlatin matrix with the standardized data: 
 #Z-score from -1 to 1 (PCC)
 
 
 #PCA Analysis
 require(MASS) #loads the PCA package
-pca <- princomp(scale(scrp)) #creates a PC matrix using the correlation matrix
-biplot(pca, expand = 1.05,main = "Biplot", xlab = "Comp.1 (__%)", ylab = "Comp.2 (__%)")
+pca <- princomp(scale(am)) #creates a PC matrix using the correlation matrix
+biplot(pca, expand = 1.05,main = "Biplot", xlab = "Comp.1 (30.1%)", ylab = "Comp.2 (14.8%)")
 #Scale for sites(PC matrix-pca$scores) on top, scale for variables (vectors-loadings) along bottom
 summary(pca) #proportion of variance is eigenvalues for each PC
 
+broken.stick(18) #After comparing, keep components with eigenvalues > broken stick from summary
 plot(pca, main="Scree Plot") #Scree plot
-broken.stick(10) #After comparing, keep components with eigenvalues > broken stick from summary
 
 round(loadings(pca),2) #Check eigenvectors: length of vector is relative variance and how much it contributes to the PC
 #Principal component loading (pg 50).  The further from zero, the greater the contribution.

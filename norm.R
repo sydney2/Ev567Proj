@@ -1,15 +1,27 @@
 #Bern Romey; 04Feb15
 # Test normality on entire data frame
 
-dta <- read.csv("evenv.csv")
-env <- na.omit(dta)
+dta <- read.csv("ApochthoniusMorphLatLon04Feb15.csv")
+am <- na.omit(dta)
 rm(dta)
-env <- env[,-1]
-env.lg <-log(env+1)
+am <- am[c(6:24)]
+am.lg <-log(am+1)
 
-par(mfrow=c(3,2))
+lshap <- lapply(am, shapiro.test) #shapiro test on normal data
+lshap[[1]] ## look at the first column results
+# You will need to extract the things you want from these objects, which all have the structure:
+str(lshap[[1]])
+lres <- sapply(lshap, `[`, c("statistic","p.value"))
+t(lres) #transposed
 
-nm <- rnorm(30) #Normal distribution
+lshap <- lapply(am.lg, shapiro.test) #shapiro test on log transformed data
+lres <- sapply(lshap, `[`, c("statistic","p.value"))
+t(lres)
+
+
+#Theoretical norm, exp, log plots with qqplots
+norm <- par(mfrow=c(3,2))
+nm <- rnorm(53) #Normal distribution
 hist(nm)
 qqnorm(nm)
 qqline(nm)
@@ -23,16 +35,7 @@ lg <-log(exp)
 hist(lg)
 qqnorm(lg)
 qqline(lg)
+par(norm)
 
-lshap <- lapply(env, shapiro.test) #shapiro test on normal data
-lshap[[1]] ## look at the first column results
-# You will need to extract the things you want from these objects, which all have the structure:
-str(lshap[[1]])
-lres <- sapply(lshap, `[`, c("statistic","p.value"))
-lres
-t(lres)#transposed
 
-lshap <- lapply(env.lg, shapiro.test) #shapiro test on log transformed data
-lres <- sapply(lshap, `[`, c("statistic","p.value"))
-t(lres)
 
