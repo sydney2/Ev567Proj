@@ -1,7 +1,7 @@
 # Ev567Proj
 PSU Environmental Science - Multivariate Analysis Term Project
 
-- [ ] Github setup instructions:  
+- [x] Github setup instructions:  
 - 1.  Click on the "Fork" icon at the top of the page.  This creates a copy (clone) of the master that is now your repository.
 - 2.  Copy the HTTPS clone URL from the box next to your repository on the right.
 - 3. If you dont have git installed on your machine:  http://www.git-scm.com/downloads. Select the download for your operating system.
