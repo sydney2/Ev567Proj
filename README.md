@@ -14,8 +14,8 @@ PSU Environmental Science - Multivariate Analysis Term Project
 - [ ] Check assumptions for PCA
 - [ ] Run PCA
 - [ ] Compare variances from biplot with cor.matrix, and corelatin matrix
-- [ ] Next 1
-- [ ] Next 2
+- [ ] RMA
+- [ ] MANOVA
 - [ ] Report findings - Term paper
 - [ ] Presentation
 
