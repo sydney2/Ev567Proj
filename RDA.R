@@ -1,4 +1,4 @@
 
 #RDA - Redundancy analysis
 
-scp <-read.csv("scorp_dat.csv")
+am<-read.csv("scorp_dat.csv")
