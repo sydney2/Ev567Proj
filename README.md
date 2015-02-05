@@ -10,7 +10,7 @@ PSU Environmental Science - Multivariate Analysis Term Project
 - You are all set, now you can start changing your script.  When you have made some changes you feel good about, "commit" saves changes to your project file on your system.  You can now "Push" those changes to repository or "Pull" from repository changes that others have made to your forked repository. Select the "Watch" icon at top to recieve automatic updates on the project.
 
 - [x] Meet with group and select variables
-- [x] Set up github repository for version control
+- [x] Setup github repository for version control
 - [ ] Check assumptions for PCA
 - [ ] Run PCA
 - [ ] Compare variances from biplot with cor.matrix, and corelatin matrix
