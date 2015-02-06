@@ -8,14 +8,14 @@ am <- dt[c(6:24)]
 
 #Assumptions
 boxplot(am, main = "Not scaled")
-boxplot(scale(am), main="Scaled with Z-score")
+boxplot(scale(am), main="Scaled (centered) with Z-score")
 boxplot(scale(log(am+1)),main="log transformed")
 
 cor.matrix(scale(am))#source cor.matrix function
 
 cov(scale(am)) #calculate correlatin matrix with the standardized data: 
 #Z-score from -1 to 1 (PCC)
-
+cor(am) #same as covariance with scale
 
 #PCA Analysis
 require(MASS) #loads the PCA package
