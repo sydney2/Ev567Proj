@@ -1,3 +1,4 @@
+#sydney
 cor.matrix<-function(x,data=NA,cor.method="pearson",add1to1=F,...){
   # panel.hist function adds the histogram
 options(warning=F)
